@@ -15,7 +15,7 @@ export default function Photo() {
   return (
     <main>
 
-      <div>
+      <div className='rmfds'>
 
       {/* <div>
       <div>
@@ -33,28 +33,30 @@ export default function Photo() {
     </div> */}
 
 
-        <div ref={ref}>
+        <div className='camdivst' ref={ref}>
         <Camera ref={camera} numberOfCamerasCallback={setNumberOfCameras} />
         <img src={"/ar.png"} alt='filter' style={{position:"relative"}} />
 
         </div>
 
+        <div className='outssdv'>
+        <img width={{width:"100%"}} src={imaget} alt={'Screenshot'} className="genouts"/>
+        </div>
 
-        <img width={{width:"100%"}} src={imaget} alt={'Screenshot'} />
-
-
-        <button style={{ marginBottom: '10px' }} onClick={getImage}>
+       
+       <div className='center-ctayl'>
+        <button className='btn btn-register file-upload'  style={{ marginBottom: '10px' }} onClick={getImage}>
           Take screenshot
         </button>
-        <button onClick={() => setImage(camera.current.takePhoto())}>Take photo</button>
-
-        <button
+        <button className='btn btn-register file-upload' onClick={() => setImage(camera.current.takePhoto())}>Take photo</button>
+        
+        <button 
         hidden={numberOfCameras <= 1}
         onClick={() => {
           camera.current.switchCamera();
         }}
       />
-
+      </div>
 
       
       </div>

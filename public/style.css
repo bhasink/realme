@@ -154,7 +154,6 @@
     text-align: center;
     transition: .1s;
     white-space: nowrap;
-    width: 250px;
     /*margin-top: 3rem;*/
   }
   
@@ -784,3 +783,40 @@
     align-items: center;
   }
   
+
+
+  /* css for new */
+
+  .rmfds .camdivst{
+    max-width: 401px;
+    margin: auto;
+    position: relative;
+}
+
+.rmfds {
+    position: relative;
+}
+
+
+.outssdv {
+  text-align: center;
+}
+
+
+.center-ctayl {
+  text-align: center;
+  display: flex;
+  max-width: 300px;
+  margin: auto;
+  margin-top: 26px;
+}
+
+.center-ctayl button {
+  margin: auto 24px;
+  margin-top: 0;
+}
+
+img.genouts {
+  max-width: 401px;
+  width: 100%;
+}

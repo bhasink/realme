@@ -328,9 +328,7 @@
   
   
   @media screen and (max-width: 600px){
-    .btn-register {
-        width: 80%;
-    }
+    
     .r-form{
         padding: 3rem 0rem;
     }
@@ -661,10 +659,7 @@
     background-color: unset;
   }
   
-  div {
-    position:relative;
-  }
-  
+ 
   .bb {
     position:absolute;
     z-index:2;
@@ -760,17 +755,6 @@
   
   }
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   .txYHk{
     width: 400px !important;
     height: 608px !important;
@@ -788,7 +772,7 @@
 
   /* css for new */
 
- 
+  
 
   .rmfds {
     text-align: center;
@@ -822,4 +806,11 @@ img.genouts {
 
 .rmfds {
   position: relative;
+}
+
+
+@media screen and (max-width: 600px){
+  .rmfds .camdivst  video#video{
+      height: 86vh;
+  }
 }

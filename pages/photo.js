@@ -40,7 +40,8 @@ export default function Photo() {
         </div>
 
         <div className='outssdv'>
-        <img width={{width:"100%"}} src={imaget} alt={'Screenshot'} className="genouts"/>
+        <img  src={imaget} alt={'Screenshot'} className="genouts"/>
+        
         </div>
 
        
@@ -48,7 +49,7 @@ export default function Photo() {
         <button className='btn btn-register file-upload'  style={{ marginBottom: '10px' }} onClick={getImage}>
           Take screenshot
         </button>
-        <button className='btn btn-register file-upload' onClick={() => setImage(camera.current.takePhoto())}>Take photo</button>
+       {/**<button className='btn btn-register file-upload' onClick={() => setImage(camera.current.takePhoto())}>Take photo</button> */} 
         
         <button 
         hidden={numberOfCameras <= 1}

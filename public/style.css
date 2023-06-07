@@ -838,7 +838,11 @@ button.iconcm img {
   max-width: max-content;
 }
 
-.iconcm.socl img {
+.center-ctayl.newcts  .iconcm img {
+  width: 17px;
+}
+
+.center-ctayl.newcts .iconcm.socl img {
   width: 12px;
 }
 

@@ -45,6 +45,10 @@ Click Again
 <img src="./facebook-f.svg"/>
 </button>
 
+<button className='btn btn-register file-upload iconcm'>
+<img src="./twitter.svg"/>
+</button>
+
               </div>
            
          

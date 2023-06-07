@@ -91,7 +91,7 @@ export default function Photo() {
             ref={webcamRef}
             screenshotFormat="image/jpeg"
             videoConstraints={videoConstraints}
-          />
+          ></Webcam>
 
 
         <img src={"/arbigs.png"} alt='filter' style={{position:"relative"}} />
@@ -99,7 +99,7 @@ export default function Photo() {
         </div>
 
         <div className='outssdv'>
-        <img  src={img} alt={'Screenshot'} className="genouts"/>
+        <img  src={imaget} alt={'Screenshot'} className="genouts"/>
         
         </div>
 
@@ -145,6 +145,12 @@ export default function Photo() {
       </div>
 
       
+      </div>
+
+      <div>
+        <button style={{ marginBottom: '10px' }} onClick={getImage}>
+          Take screenshot
+        </button>
       </div>
 
       {/* <img src={image} alt='Taken photo' /> */}

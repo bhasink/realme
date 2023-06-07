@@ -34,7 +34,7 @@ export default function Photo() {
 
 
         <div className='camdivst' ref={ref}>
-        <Camera ref={camera} numberOfCamerasCallback={setNumberOfCameras} />
+        <Camera ref={camera} aspectRatio={"cover"} numberOfCamerasCallback={setNumberOfCameras} />
         <img src={"/ar.png"} alt='filter' style={{position:"relative"}} />
 
         </div>
@@ -49,6 +49,23 @@ export default function Photo() {
         <button className='btn btn-register file-upload'  style={{ marginBottom: '10px' }} onClick={getImage}>
           Take screenshot
         </button>
+
+
+
+        <button className='btn btn-register file-upload'  style={{ marginBottom: '10px' }} 
+        
+        disabled={numberOfCameras <= 1}
+        onClick={() => {
+          if (camera.current) {
+            const result = camera.current.switchCamera();
+            console.log(result);
+          }
+        }}
+        
+        >
+Switch Camera
+        </button>
+       
        {/**<button className='btn btn-register file-upload' onClick={() => setImage(camera.current.takePhoto())}>Take photo</button> */} 
         
         <button 

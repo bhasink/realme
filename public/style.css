@@ -850,6 +850,14 @@ button.iconcm img {
   margin: 5px 5px;
 }
 
+.bigdvcs {
+  display: none;
+}
+
+.center-ctayl{
+  margin: 10px auto;
+}
+
 @media screen and (max-width: 600px){
   .rmfds .camdivst  video#video{
       height: 91vh;
@@ -864,4 +872,34 @@ button.iconcm img {
     max-width: inherit;
 }
 
+.center-ctayl{
+  margin: 10px auto;
 }
+
+}
+
+
+@media screen and (max-width: 413px) and (min-width: 400px){
+  .bigdvcs {
+    display: block;
+}
+
+.smalldvcs {
+  display: none;
+}
+
+.bgsetsm {
+  height: 89vh;
+  position: relative;
+  background-size: cover !important;
+  width: 100%;
+  background-position: top !important;
+  background-repeat: no-repeat !important;
+}
+
+.rmfds .camdivst {
+  max-height: 828px;
+}
+
+}
+

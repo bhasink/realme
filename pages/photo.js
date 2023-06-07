@@ -40,15 +40,16 @@ export default function Photo() {
 
         <div className='camdivst' ref={ref}>
         <Camera ref={camera} aspectRatio={"cover"} numberOfCamerasCallback={setNumberOfCameras} />
-        <img src={"/arbigs.png"} alt='filter' style={{position:"relative"}} />
+        <img src={"/artw.png"} className="smalldvcs" alt='filter' style={{position:"relative"}} />
+        <img src={"/arbigs2.png"} className="bigdvcs" alt='filter' style={{position:"relative"}} />
        {/* <div className='bgsetsm' style={{background:"url('/arbigs.png')"}}></div>*/ } 
 
         </div>
 
-        <div className='outssdv'>
+      {/**<div className='outssdv'>
         <img  src={imaget} alt={'Screenshot'} className="genouts"/>
         
-        </div>
+        </div> */}  
 
        
        <div className='center-ctayl'>

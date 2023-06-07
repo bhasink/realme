@@ -1,21 +1,21 @@
-import { useState, useRef, createRef, useEffect} from 'react'
+import { useState, useRef, createRef, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { saveAs } from 'file-saver'
 
 export default function Home() {
-
-  const [image, setImage] = useState("")
-
+  const [image, setImage] = useState('')
 
   useEffect(() => {
     let value
     // Get the value from local storage if it exists
-    value = localStorage.getItem("imaget") || ""
+    value = localStorage.getItem('imaget') || ''
     setImage(value)
   }, [])
 
-  const router = useRouter();
-  const data = router.query;
+  const downloadImage = () => {
+    saveAs(image, 'image.jpg')
+  }
 
   return (
     <>
@@ -27,31 +27,37 @@ export default function Home() {
         <div className="panel-cont">
           <div className=" justify-content-center mb-3 maindiv">
             <div className="leftsimg">
-
               <img src={image} alt />
             </div>
-            
-              <div className="center-ctayl newcts">
 
-<Link href="/photo" className='btn btn-register file-upload'>
-Click Again
-</Link>
+            <div className="center-ctayl newcts">
+              <Link href="/photo" className="btn btn-register file-upload">
+                Click Again
+              </Link>
 
-<button className='btn btn-register file-upload iconcm'>
-<img src="./download-solid.svg"/>
-</button>
+              <Link
+                href="#"
+                onClick={() => {
+                  navigator.clipboard.writeText(image)
+                  alert('Link copied!')
+                }}
+                className="btn btn-register file-upload"
+              >
+                Copy link
+              </Link>
 
-<button className='btn btn-register file-upload iconcm socl'>
-<img src="./facebook-f.svg"/>
-</button>
+              <button className="btn btn-register file-upload iconcm" onClick={downloadImage}>
+                <img src="./download-solid.svg" />
+              </button>
 
-<button className='btn btn-register file-upload iconcm'>
-<img src="./twitter.svg"/>
-</button>
+              <a className="btn btn-register file-upload iconcm socl" href={`https://www.facebook.com/sharer/sharer.php?u=${image}&quote=Social share of realme ....`} target="_blank">
+                <img src="./facebook-f.svg" />
+              </a>
 
-              </div>
-           
-         
+              <a className="btn btn-register file-upload iconcm" href={`http://twitter.com/share?text=realme new mobile launch&url=${image}&hashtags=realmeLaunch,realmeLaunch2,realmeLaunch33`}>
+                <img src="./twitter.svg" />
+              </a>
+            </div>
           </div>
         </div>
       </section>

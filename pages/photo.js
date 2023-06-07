@@ -21,7 +21,7 @@ export default function Photo() {
 
   const videoConstraints = {
     width: 400,
-    height: 608,
+    height: 800,
     facingMode: "user",
   };
 
@@ -87,8 +87,7 @@ export default function Photo() {
         <Webcam className='newvdfrms'
             audio={false}
             mirrored={true}
-            height={400}
-            width={608}
+           
             ref={webcamRef}
             screenshotFormat="image/jpeg"
             videoConstraints={videoConstraints}

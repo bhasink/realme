@@ -61,20 +61,6 @@ export default function Photo() {
 
   return (
     <main>
-
-
-
-          <Webcam
-            audio={false}
-            mirrored={true}
-            height={400}
-            width={400}
-            ref={webcamRef}
-            screenshotFormat="image/jpeg"
-            videoConstraints={videoConstraints}
-          />
-          <button onClick={capture}>Capture photo</button>
-       
     
 
       <div className='rmfds'>
@@ -113,10 +99,10 @@ export default function Photo() {
 
         </div>
 
-        {/* <div className='outssdv'>
-        <img  src={imaget} alt={'Screenshot'} className="genouts"/>
+        <div className='outssdv'>
+        <img  src={img} alt={'Screenshot'} className="genouts"/>
         
-        </div> */}
+        </div>
 
        
        <div className='center-ctayl'>
@@ -129,6 +115,9 @@ export default function Photo() {
           className='btn btn-register file-upload iconcm'>
           <img src='./frontcmon.png'/>
         </Link>
+
+        <button onClick={capture}>Capture photo</button>
+
 
 
         <button className='btn btn-register file-upload iconcm bcmp' 

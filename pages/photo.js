@@ -2,6 +2,7 @@
 import { useState, useRef, createRef} from 'react'
 import {Camera} from "react-camera-pro";
 import { useScreenshot } from 'use-react-screenshot'
+import axios from "axios"
 import Link from 'next/link'
 
 export default function Photo() {
@@ -11,11 +12,36 @@ export default function Photo() {
   const [numberOfCameras, setNumberOfCameras] = useState(0);
   const ref = createRef(null)
   const [imaget, takeScreenshot] = useScreenshot()
-  const getImage = () => takeScreenshot(ref.current)
+ 
+  const getImage = async(e) => {
+   
+   
+    takeScreenshot(ref.current)
 
-  if(imaget){
-    window.localStorage.setItem("imaget", imaget);
+    let formData = new FormData()
+    formData.append('image', imaget)
+
+  //   fetch('https://phpstack-709751-3121510.cloudwaysapps.com/api/realme', {
+  //     method: 'post',
+  //     headers: {'Content-Type':'application/json'},
+  //     body: formData
+  //  }).then(response => response.json())
+  //  .then(data => window.localStorage.setItem("imaget", data.data.img));
+
+
+    try {
+      const { data } = await axios.post('https://phpstack-709751-3121510.cloudwaysapps.com/api/realme', formData)
+     
+      window.localStorage.setItem("imaget", data.data.img);
+
+     
+      console.log(data)
+    } catch (err) {
+      console.log(err)
+    }
+
   }
+
 
   return (
     <main>
@@ -40,33 +66,31 @@ export default function Photo() {
 
         <div className='camdivst' ref={ref}>
         <Camera ref={camera} aspectRatio={"cover"} numberOfCamerasCallback={setNumberOfCameras} />
-        <img src={"/artw.png"} className="smalldvcs" alt='filter' style={{position:"relative"}} />
-        <img src={"/arbigs2.png"} className="bigdvcs" alt='filter' style={{position:"relative"}} />
-       {/* <div className='bgsetsm' style={{background:"url('/arbigs.png')"}}></div>*/ } 
+        <img src={"/arbigs.png"} alt='filter' style={{position:"relative"}} />
 
         </div>
 
-      {/**<div className='outssdv'>
+        {/* <div className='outssdv'>
         <img  src={imaget} alt={'Screenshot'} className="genouts"/>
         
-        </div> */}  
+        </div> */}
 
        
        <div className='center-ctayl'>
-       {/**<button className='btn btn-register file-upload iconcm'  style={{ marginBottom: '10px' }} onClick={getImage}>
+        <button className='btn btn-register file-upload iconcm'  style={{ marginBottom: '10px' }} onClick={getImage}>
         <img src='./frontcmon.png'/>
-        </button> */} 
+        </button>
 
         <Link 
           href={{
             pathname: '/result',
           }}
-          className='btn btn-register file-upload iconcm'>
-         <img src='./frontcmon.png'/>
+          className='btn btn-register file-upload'>
+          Result
         </Link>
 
 
-        <button className='btn btn-register file-upload iconcm bcmp'  style={{ marginBottom: '' }} 
+        <button className='btn btn-register file-upload iconcm bcmp'  style={{ marginBottom: '10px' }} 
         
         disabled={numberOfCameras <= 1}
         onClick={() => {

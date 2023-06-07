@@ -84,7 +84,7 @@ export default function Photo() {
         <div className='camdivst' ref={ref}>
         {/* <Camera ref={camera} aspectRatio={"cover"} numberOfCamerasCallback={setNumberOfCameras} /> */}
 
-        <Webcam
+        <Webcam className='newvdfrms'
             audio={false}
             mirrored={true}
             height={400}

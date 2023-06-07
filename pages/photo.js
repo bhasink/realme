@@ -2,6 +2,7 @@
 import { useState, useRef, createRef} from 'react'
 import {Camera} from "react-camera-pro";
 import { useScreenshot } from 'use-react-screenshot'
+import axios from "axios"
 import Link from 'next/link'
 
 export default function Photo() {
@@ -11,11 +12,28 @@ export default function Photo() {
   const [numberOfCameras, setNumberOfCameras] = useState(0);
   const ref = createRef(null)
   const [imaget, takeScreenshot] = useScreenshot()
-  const getImage = () => takeScreenshot(ref.current)
+ 
+  const getImage = async (e) => {
+   
+   
+    takeScreenshot(ref.current)
 
-  if(imaget){
-    window.localStorage.setItem("imaget", imaget);
+    let formData = new FormData()
+    formData.append('image', imaget)
+
+    try {
+      const { data } = await axios.post('https://phpstack-709751-3121510.cloudwaysapps.com/api/realme', formData)
+     
+      window.localStorage.setItem("imaget", data.data.img);
+
+     
+      console.log(data)
+    } catch (err) {
+      console.log(err)
+    }
+
   }
+
 
   return (
     <main>

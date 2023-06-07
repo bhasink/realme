@@ -35,7 +35,7 @@ export default function Photo() {
 
         <div className='camdivst' ref={ref}>
         <Camera ref={camera} aspectRatio={"cover"} numberOfCamerasCallback={setNumberOfCameras} />
-        <img src={"/ar.png"} alt='filter' style={{position:"relative"}} />
+        <img src={"/arbigs.png"} alt='filter' style={{position:"relative"}} />
 
         </div>
 
@@ -46,13 +46,13 @@ export default function Photo() {
 
        
        <div className='center-ctayl'>
-        <button className='btn btn-register file-upload'  style={{ marginBottom: '10px' }} onClick={getImage}>
-          Take screenshot
+        <button className='btn btn-register file-upload iconcm'  style={{ marginBottom: '10px' }} onClick={getImage}>
+        <img src='./frontcmon.png'/>
         </button>
 
 
 
-        <button className='btn btn-register file-upload'  style={{ marginBottom: '10px' }} 
+        <button className='btn btn-register file-upload iconcm bcmp'  style={{ marginBottom: '10px' }} 
         
         disabled={numberOfCameras <= 1}
         onClick={() => {
@@ -63,7 +63,8 @@ export default function Photo() {
         }}
         
         >
-Switch Camera
+
+<img src='./flipcmct.png'/>
         </button>
        
        {/**<button className='btn btn-register file-upload' onClick={() => setImage(camera.current.takePhoto())}>Take photo</button> */} 

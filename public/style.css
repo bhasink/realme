@@ -801,16 +801,51 @@ img.genouts {
   margin: auto;
   position: relative;
   overflow: hidden;
-  max-height: 608px;
+  max-height: 650px;
 }
 
 .rmfds {
   position: relative;
 }
 
+.center-ctayl {
+  display: flex;
+  max-width: 105px;
+  margin: auto;
+}
+
+.center-ctayl .iconcm {
+  margin: auto 6px;
+}
+
+button.iconcm {
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  padding: 0 9px;
+}
+
+button.iconcm img {
+  width: 100%;
+}
+
+.iconcm.bcmp {
+  padding: 0 4px;
+}
 
 @media screen and (max-width: 600px){
   .rmfds .camdivst  video#video{
-      height: 86vh;
+      height: 91vh;
   }
+
+  video#video{
+    max-width: 100%;
+  }
+
+  .rmfds .camdivst {
+    width: 100%;
+    max-width: inherit;
+}
+
 }

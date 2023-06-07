@@ -819,9 +819,9 @@ img.genouts {
 }
 
 .iconcm {
-  border-radius: 100%;
-  width: 40px;
-  height: 40px;
+ 
+  width: 42px;
+  height: 34px;
   margin: 0;
   padding: 0 9px;
 }
@@ -838,16 +838,25 @@ button.iconcm img {
   max-width: max-content;
 }
 
-.center-ctayl.newcts  .iconcm img {
-  width: 17px;
-}
 
-.center-ctayl.newcts .iconcm.socl img {
-  width: 12px;
-}
 
 .center-ctayl.newcts .btn-register.file-upload {
   margin: 5px 5px;
+  line-height: 36px;
+  font-family: sans-serif;
+  font-weight: 600;
+ 
+}
+
+.center-ctayl.newcts .iconcm{
+  width: 44px;
+  height: 44px;
+}
+
+.btn-register.file-upload{
+  font-family: sans-serif;
+  font-weight: 600;
+  box-shadow: #e3d9d9 0px 3px 3px 0px;
 }
 
 .bigdvcs {

@@ -36,6 +36,7 @@ export default function Photo() {
         <div className='camdivst' ref={ref}>
         <Camera ref={camera} aspectRatio={"cover"} numberOfCamerasCallback={setNumberOfCameras} />
         <img src={"/arbigs.png"} alt='filter' style={{position:"relative"}} />
+        <div className='bgsetsm' style={{background:"url('/arbigs.png')"}}></div>
 
         </div>
 

@@ -2,6 +2,7 @@
 import { useState, useRef, createRef} from 'react'
 import {Camera} from "react-camera-pro";
 import { useScreenshot } from 'use-react-screenshot'
+import Link from 'next/link'
 
 export default function Photo() {
 
@@ -11,6 +12,10 @@ export default function Photo() {
   const ref = createRef(null)
   const [imaget, takeScreenshot] = useScreenshot()
   const getImage = () => takeScreenshot(ref.current)
+
+  if(imaget){
+    window.localStorage.setItem("imaget", imaget);
+  }
 
   return (
     <main>
@@ -51,6 +56,13 @@ export default function Photo() {
         <img src='./frontcmon.png'/>
         </button>
 
+        <Link 
+          href={{
+            pathname: '/result',
+          }}
+          className='btn btn-register file-upload'>
+          Result
+        </Link>
 
 
         <button className='btn btn-register file-upload iconcm bcmp'  style={{ marginBottom: '10px' }} 

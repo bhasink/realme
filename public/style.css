@@ -810,7 +810,7 @@ img.genouts {
 
 .center-ctayl {
   display: flex;
-  max-width: 105px;
+  max-width: 102px;
   margin: auto;
 }
 
@@ -818,7 +818,7 @@ img.genouts {
   margin: auto 6px;
 }
 
-button.iconcm {
+.iconcm {
   border-radius: 100%;
   width: 40px;
   height: 40px;
@@ -832,6 +832,18 @@ button.iconcm img {
 
 .iconcm.bcmp {
   padding: 0 4px;
+}
+
+.center-ctayl.newcts {
+  max-width: max-content;
+}
+
+.iconcm.socl img {
+  width: 12px;
+}
+
+.center-ctayl.newcts .btn-register.file-upload {
+  margin: 5px 5px;
 }
 
 @media screen and (max-width: 600px){

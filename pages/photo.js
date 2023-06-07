@@ -41,7 +41,7 @@ export default function Photo() {
         <div className='camdivst' ref={ref}>
         <Camera ref={camera} aspectRatio={"cover"} numberOfCamerasCallback={setNumberOfCameras} />
         <img src={"/arbigs.png"} alt='filter' style={{position:"relative"}} />
-        <div className='bgsetsm' style={{background:"url('/arbigs.png')"}}></div>
+       {/* <div className='bgsetsm' style={{background:"url('/arbigs.png')"}}></div>*/ } 
 
         </div>
 
@@ -52,20 +52,20 @@ export default function Photo() {
 
        
        <div className='center-ctayl'>
-        <button className='btn btn-register file-upload iconcm'  style={{ marginBottom: '10px' }} onClick={getImage}>
+       {/**<button className='btn btn-register file-upload iconcm'  style={{ marginBottom: '10px' }} onClick={getImage}>
         <img src='./frontcmon.png'/>
-        </button>
+        </button> */} 
 
         <Link 
           href={{
             pathname: '/result',
           }}
-          className='btn btn-register file-upload'>
-          Result
+          className='btn btn-register file-upload iconcm'>
+         <img src='./frontcmon.png'/>
         </Link>
 
 
-        <button className='btn btn-register file-upload iconcm bcmp'  style={{ marginBottom: '10px' }} 
+        <button className='btn btn-register file-upload iconcm bcmp'  style={{ marginBottom: '' }} 
         
         disabled={numberOfCameras <= 1}
         onClick={() => {

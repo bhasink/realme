@@ -25,20 +25,28 @@ export default function Home() {
           <p className="campaign-text">BE THE FACE OF NARZO</p>
         </div>
         <div className="panel-cont">
-          <div className="d-flex justify-content-center mb-3 maindiv">
+          <div className=" justify-content-center mb-3 maindiv">
             <div className="leftsimg">
 
               <img src={image} alt />
             </div>
-            <div className="flx-cont">
-              <div className="bt-blkk">
+            
+              <div className="center-ctayl newcts">
 
 <Link href="/photo" className='btn btn-register file-upload'>
-Click Photo
+Click Again
 </Link>
 
+<button className='btn btn-register file-upload iconcm'>
+<img src="./download-solid.svg"/>
+</button>
+
+<button className='btn btn-register file-upload iconcm socl'>
+<img src="./facebook-f.svg"/>
+</button>
+
               </div>
-            </div>
+           
          
           </div>
         </div>

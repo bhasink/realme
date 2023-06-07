@@ -1,9 +1,10 @@
 "use client"; 
-import { useState, useRef, createRef} from 'react'
+import { useState, useRef, createRef,useCallback } from 'react'
 import {Camera} from "react-camera-pro";
 import { useScreenshot } from 'use-react-screenshot'
 import axios from "axios"
 import Link from 'next/link'
+import Webcam from "react-webcam";
 
 export default function Photo() {
 
@@ -12,22 +13,33 @@ export default function Photo() {
   const [numberOfCameras, setNumberOfCameras] = useState(0);
   const ref = createRef(null)
   const [imaget, takeScreenshot] = useScreenshot()
- 
-  const getImage = async(e) => {
-   
-   
-    takeScreenshot(ref.current)
+  const getImage = () => {takeScreenshot(ref.current);  getIma()}
+
+
+  const [img, setImg] = useState(null);
+  const webcamRef = useRef(null);
+
+  const videoConstraints = {
+    width: 400,
+    height: 608,
+    facingMode: "user",
+  };
+
+  const capture = useCallback(() => {
+    const imageSrc = webcamRef.current.getScreenshot();
+    setImg(imageSrc);
+  }, [webcamRef]);
+
+  // if(imaget){
+    // window.localStorage.setItem("imaget", imaget);
+
+    // getIma()
+
+  
+    const getIma = async(e) => {
 
     let formData = new FormData()
     formData.append('image', imaget)
-
-  //   fetch('https://phpstack-709751-3121510.cloudwaysapps.com/api/realme', {
-  //     method: 'post',
-  //     headers: {'Content-Type':'application/json'},
-  //     body: formData
-  //  }).then(response => response.json())
-  //  .then(data => window.localStorage.setItem("imaget", data.data.img));
-
 
     try {
       const { data } = await axios.post('https://phpstack-709751-3121510.cloudwaysapps.com/api/realme', formData)
@@ -39,12 +51,17 @@ export default function Photo() {
     } catch (err) {
       console.log(err)
     }
-
   }
+    
+  // }
+
+  
+
 
 
   return (
     <main>
+    
 
       <div className='rmfds'>
 
@@ -65,15 +82,27 @@ export default function Photo() {
 
 
         <div className='camdivst' ref={ref}>
-        <Camera ref={camera} aspectRatio={"cover"} numberOfCamerasCallback={setNumberOfCameras} />
+        {/* <Camera ref={camera} aspectRatio={"cover"} numberOfCamerasCallback={setNumberOfCameras} /> */}
+
+        <Webcam
+            audio={false}
+            mirrored={true}
+            height={400}
+            width={608}
+            ref={webcamRef}
+            screenshotFormat="image/jpeg"
+            videoConstraints={videoConstraints}
+          />
+
+
         <img src={"/arbigs.png"} alt='filter' style={{position:"relative"}} />
 
         </div>
 
-        {/* <div className='outssdv'>
-        <img  src={imaget} alt={'Screenshot'} className="genouts"/>
+        <div className='outssdv'>
+        <img  src={img} alt={'Screenshot'} className="genouts"/>
         
-        </div> */}
+        </div>
 
        
        <div className='center-ctayl'>
@@ -86,6 +115,9 @@ export default function Photo() {
           className='btn btn-register file-upload iconcm'>
           <img src='./frontcmon.png'/>
         </Link>
+
+        <button onClick={capture}>Capture photo</button>
+
 
 
         <button className='btn btn-register file-upload iconcm bcmp' 
